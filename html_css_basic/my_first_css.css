@@ -1,0 +1,42 @@
+
+h1 {
+    color: #ff0000;
+}
+
+p {
+    color: rgba(255,0,0,1);
+}
+
+div {
+    width: 100%;
+    max-width: 200px;
+    height:  20vh;
+
+    border: 1px dashed red;
+}
+
+.red{
+    background-color: red;
+    position: absolute;
+    height: 300px;
+    width: 100px;
+    top: 20px;
+    left: 30px;
+
+}
+
+.green{
+    background-color: green;
+    position: relative;
+    
+
+}
+
+.yellow{
+    background-color: yellow;
+    position: absolute;
+    height: 80px;
+    width: 80px;
+    right: 30px;
+    bottom: 15px;
+}

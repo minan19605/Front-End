@@ -1,0 +1,35 @@
+.container{
+    border: 1px solid black;
+    width: 100%;
+    max-width: 700px;
+    height: 60vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.box_big{
+    border: 2px solid rebeccapurple;
+    width: 120px;
+    height: 120px;
+    /* margin: 10px */
+}
+
+.box_wrapper {
+    /* border: 2px dashed burlywood; */
+    /* height: 600px; */
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    /* align-items: center; */
+}
+
+.box {
+    border: 2px solid greenyellow;
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+}

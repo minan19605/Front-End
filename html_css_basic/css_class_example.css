@@ -1,0 +1,28 @@
+.highlight {
+    color: blue;
+    font-weight: bold;
+}
+
+.important {
+    font-style: italic;
+    background-color: lightgoldenrodyellow;
+}
+
+.container {
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.button {
+    background-color: green;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+section {
+    height: 80vh;
+    border: 1px solid black;
+    border-width: thin;
+}
