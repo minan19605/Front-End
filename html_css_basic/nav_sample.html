@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nav 标签示例</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 1rem;
+        }
+        /* nav 标签的 CSS 样式 */
+        nav {
+            background-color: #444;
+            padding: 0.5rem 1rem;
+        }
+        nav ul {
+            list-style: none; /* 移除列表点 */
+            margin: 0;
+            padding: 0;
+            display: flex; /* 使用 flexbox 让导航项水平排列 */
+            justify-content: center; /* 居中显示 */
+            gap: 20px; /* 导航项之间的间距 */
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 12px;
+            display: block;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        nav ul li a:hover {
+            background-color: #555;
+        }
+        main {
+            padding: 20px;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>我的网站标题</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#home">首页</a></li>
+            <li><a href="#about">关于我们</a></li>
+            <li><a href="#services">服务</a></li>
+            <li><a href="#contact">联系我们</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h2>欢迎来到我们的网站！</h2>
+        <p>这里是网站的主要内容区域。通过上方的导航栏可以访问网站的不同部分。</p>
+        <p>我们致力于提供优质的服务和信息。请随意浏览我们的网站内容。</p>
+        <p style="height: 800px;">这里有一些占位内容，让页面可以滚动。</p>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 我的网站. All rights reserved.</p>
+        </footer>
+
+</body>
+</html>
