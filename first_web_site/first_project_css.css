@@ -1,0 +1,262 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+header {
+  background-color: hwb(193 67% 0% / 0.512);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 20px;
+}
+
+.logo_img {
+  width: 40%;
+  height: auto;
+}
+
+.links {
+  font-weight: bold;
+  font-size: larger;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+a {
+  color: black;
+}
+
+/* NB part */
+#NB {
+  background-color: #e9a9da;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 50px);
+  padding: 16px;
+}
+
+.NB__info,
+.NB__img--wrapper {
+  width: 50%;
+}
+
+.NB__img--wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.NB__img {
+  width: 80%;
+}
+
+h1 {
+  font-size: 72px;      
+}
+
+.description {
+  font-size: 36px;
+  margin: 16px 0px;
+}
+
+button {
+  background-color: aqua;
+  color: white;
+  padding: 8px 24px;
+  font-weight: bold;
+  font-size: 24px;
+  border: none;
+  cursor: pointer;
+}
+
+/* About part styles */
+#About {
+  background-color: beige;
+  padding: 20px;
+}
+
+h2 {
+  text-align: center;
+  font-size: 48px;
+  padding: 16px 0;
+}
+
+.about__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about__wrapper--description {
+  width: 60%;
+  margin-right: 32px;
+}
+
+p {
+  font-size: 20px;
+  padding: 16px 0px;
+  line-height: 1.5;
+}
+
+.about__image {
+  width: 40%;
+  padding: 16px;
+}
+
+.about__image img {
+  width: 90%;
+  margin-right: 16px;
+}
+
+/* Discord part */
+
+#Discord {
+  background-color: #76e4f5;
+  padding: 20px;
+}
+
+.discord__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 16px;
+}
+
+.discord__description {
+  width: 60%;
+}
+
+.discord__fig {
+  width: 40%;
+  /* margin-right: 24px; */
+}
+
+.discord__fig img {
+  width: 90%;
+}
+
+/* Contact */
+#Contact {
+  background-color: lab(73.41% 1.85 -32.26 / 0.499);
+  padding: 24px 0px;
+}
+
+form {
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+input,
+textarea {
+  font-size: 16px;
+  margin-bottom: 24px;
+  padding: 6px;
+}
+
+/* Footer part */
+
+footer {
+  background-color: #76e4f5;
+  padding: 24px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer__links {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+@media (max-width: 720px) {
+  .logo_img {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    padding-bottom: 20px;
+  }
+
+  #NB, .NB__info {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .NB__info,
+  .NB__img--wrapper {
+    width: 100%;
+  }
+
+  h1 {
+    font-size: 60px;
+    /* Explanation of clamp(MIN_VALUE, PREFERRED_VALUE, MAX_VALUE):
+       - Min: 3.2rem (32px) - The smallest this h1 will ever be.
+       - Preferred: 4.5vw - This is the fluid part, scaling with viewport width.
+       - Max: 6.4rem (64px) - The LARGEST this h1 will ever be, even on very wide screens.
+    */
+    font-size: clamp(3.2rem, 4.5vw, 6.4rem);
+    
+    text-align: center;
+    max-width: 90%;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  .description {
+    font-size: 24px;
+  }
+
+  .about__wrapper {
+    display: block;
+  }
+
+  .about__wrapper--description, .about__image, .discord__fig {
+    width: 100%;
+  }
+
+  .discord__wrapper {
+    display: flex;
+    flex-direction:column-reverse;
+  }
+
+  .discord__description {
+    width: 100%;
+  }
+
+  form {
+    padding: 16px 16px;
+  }
+
+  .footer__links {
+    margin-top: 0px;
+  }
+
+  .footer__links a {
+    font-size: small;
+  }
+
+  footer p {
+    font-size: small;
+  }
+}
+
+@media (max-width: 320px) {
+  ul {
+    /* display: none; */
+    display: flex;
+    flex-direction: column;
+  }
+}
