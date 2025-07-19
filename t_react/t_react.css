@@ -330,6 +330,7 @@ header .row {
 .feature-item{
     width: calc(100% / 3);
     display: flex;
+    align-items: flex-start;
     padding: 32px 24px;
 }
 
@@ -337,10 +338,6 @@ header .row {
     border: 1px solid gainsboro;
     border-radius: 50%;
     padding: 24px 24px;
-   
-    display: flex;
-    /* flex-direction: column; */
-    /* justify-content: start; */
 }
 
 .feature-icon {
