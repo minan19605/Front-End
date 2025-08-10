@@ -34,5 +34,40 @@
       <br />
       <button>Submit</button>
     </form>
+
+    <form id="myForm" onsubmit="contact(event)">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name"><br><br>
+      
+      <input type="submit" value="Submit via Input">
+      
+      <button>Submit via Button</button>
+
+      <button type="button" onclick="sayHello()">Click Me!</button>
+    </form>
+
+    <script>
+      function contact(event) {
+        event.preventDefault(); // Prevents the form from reloading the page
+        const submitter = event.submitter; // Get the element that submitted the form
+  
+        if (submitter.tagName === 'INPUT') {
+          alert("Form submitted by the input tag!");
+        } else if (submitter.tagName === 'BUTTON') {
+          alert("Form submitted by the button tag!");
+        }
+
+        // also can use class name to identify which need add class at input and button tag.
+        if (submitter.classList.contains('input-btn')) {
+          alert("Form submitted by the input tag!");
+        } else if (submitter.classList.contains('button-btn')) {
+          alert("Form submitted by the button tag!");
+        }
+      }
+
+      function sayHello() {
+        alert("Hello from a regular button!");
+      }
+    </script>
   </body>
 </html>

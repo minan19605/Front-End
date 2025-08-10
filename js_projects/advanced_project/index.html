@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/33a51ac434.js" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+    <title>My Info</title>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+    (function(){
+        emailjs.init({
+            publicKey: "9K589kQH6Sy2SIAfp",
+        });
+    })();
+    </script>
+</head>
+<body onmousemove="shapeMove(event)">
+    <section class="modal">
+        <!-- Modal part -->
+         <div class="header__modal header__modal--hidden">
+            <div class="modal__half modal__about modal__about--hidden">
+                <div class="half__container">
+                    <h3 class="half__title">Here's a bit about me.</h3>
+                    <h5 class="half__subtitle">Frontend Software Engineer</h5>
+                    <p class="modal__about--para">I'm a experienced <span class="orange">software engineer</span> with experiences at Frontend, python, data anslysis, AI. Now I have strong passion for developing websites with great <span class="orange">user experiences.</span><br> I currently work on extremely difficult engineering problems and learn from a team consisting of some of the most <span class="orange">talented</span> and <span class="orange">experiened</span> sofware engineers every day.</p>
+                    <div class="skill__list">
+                        <figure class="skill">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/HTML5_Badge.svg/240px-HTML5_Badge.svg.png" alt="" class="skill__img">
+                            <span class="skill__name">HTML</span>
+                        </figure>
+                        <figure class="skill">
+                            <img src="https://cdn.iconscout.com/icon/free/png-256/css-131-722685.png" alt="" class="skill__img">
+                            <span class="skill__name">CSS</span>
+                        </figure>
+                        <figure class="skill">
+                            <img src="https://cdn.iconscout.com/icon/free/png-256/javascript-1-225993.png" alt="" class="skill__img">
+                            <span class="skill__name">Javascript</span>
+                        </figure>
+                        <figure class="skill">
+                            <img src="https://cdn.iconscout.com/icon/free/png-256/typescript-3521774-2945272.png" alt="" class="skill__img">
+                            <span class="skill__name">Typescript</span>
+                        </figure>
+                        <figure class="skill">
+                            <img src="https://cdn.iconscout.com/icon/free/png-256/vue-282497.png" alt="" class="skill__img">
+                            <span class="skill__name">VUE</span>
+                        </figure>
+                        <figure class="skill">
+                            <img src="https://cdn.iconscout.com/icon/free/png-256/nuxt-dot-js-3628959-3030184.png" alt="" class="skill__img">
+                            <span class="skill__name">React</span>
+                        </figure>
+                        <figure class="skill">
+                            <img src="https://cdn.iconscout.com/icon/free/png-256/react-3-1175109.png" alt="" class="skill__img">
+                            <span class="skill__name">Nuxt</span>
+                        </figure>
+                        <figure class="skill">
+                            <img src="https://mobx.js.org/img/mobx.png" alt="" class="skill__img">
+                            <span class="skill__name">MobiX</span>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal__half modal__contact modal__contact--hidden">
+                <div class="half__container">
+                    <h3 class="half__title">Let's have a chat!</h3>
+                    <p class="modal__about--para">I'm currently open to new opportunities.</p>
+                    <form action="" id="contact__form" onsubmit="contact(event)">
+                        <label for="" class="c-label"><span class="c_red">*</span> Name</label>
+                        <input type="text" name="user_name" class="contact__info" placeholder="Your name" >
+
+                        <label for="" class="c-label"><span class="c_red">*</span> E-mail</label>
+                        <input type="email" name="user_email" class="contact__info" placeholder="your@gmail.com" >
+
+                        <label for="" class="c-label"><span class="c_red">*</span> Message</label>
+                        <textarea name="message" id="" rows="4" class="contact__info" placeholder="How can I help?" ></textarea>
+
+                        <button class="c-submit">Send it my ways</button>
+                    </form>
+                </div>
+                <button class="close-btn click" onclick="closeToggle()" aria-label="Close chat">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+                <div class="contact__overlay contact__overlay--loading">
+                    <i class="fa-solid fa-spinner"></i>
+                </div>
+                <div class="contact__overlay contact__overlay--success">Thanks for the message! Looking forward to speak to you soon.</div>
+            </div>
+         </div>
+    </section>
+    <header>
+        <div class="nav-row">
+            <img src="./assets/logo.svg" alt="" class="header-icon">
+            <ul class="nav-link__list">
+                <li class="nav-link click linke__hover--effect linke__hover--effect--black"><a href="" >About</a></li>
+                <li class="nav-link click linke__hover--effect linke__hover--effect--black"><a href="" >Projects</a></li>
+                <li class="nav-link click linke__hover--effect linke__hover--effect--black"><a href="" >Contact</a></li>
+                <li class="nav-link click linke__hover--effect linke__hover--effect--black" onclick="toggleBlackWhite()"><i class="fa-solid fa-circle-half-stroke"></i></li>
+            </ul>
+        </div>
+        <div class="my-introduce">
+            <h1 class="title">Hey</h1>
+            <h1 class="title"><span class="orange">I am Andrew</span></h1>
+            <p class="my-info">I'm a <span class="orange">Frontend Software Engineer</span> with a strong passion for building web applications with great user experiences.<br>
+                Here's a bit more <span class="orange">about me</p>
+            <div class="link-list">
+                <a href="" target="_blank" class="link click"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="" target="_blank" class="link click"><i class="fa-brands fa-square-github"></i></a>
+                <a href="./assets/David Bragg Resume.pdf" target="_blank" class="link click"><i class="fa-solid fa-file-pdf"></i></a>
+            </div>
+            
+        </div>
+
+        <button class="send__email click" onclick="toggleModal()"><i class="fa-solid fa-envelope"></i></button>
+        <a href="#projects" class="scroll">
+            <div class="scroll__icon click"></div>
+        </a>
+        <img src="./assets/circle.svg" alt="" class="shape shape-1">
+        <img src="./assets/semi circle.svg" alt="" class="shape shape-2">
+        <img src="./assets/circle.svg" alt="" class="shape shape-3">
+        <img src="./assets/squiggly.svg" alt="" class="shape shape-4">
+        <img src="./assets/circle.svg" alt="" class="shape shape-5">
+        <img src="./assets/triangle.svg" alt="" class="shape shape-6">
+        <img src="./assets/semi circle.svg" alt="" class="shape shape-7">
+        <img src="./assets/triangle.svg" alt="" class="shape shape-8">
+        <img src="./assets/squiggly.svg" alt="" class="shape shape-9">
+    </header>
+    <section id="projects">
+        <div class="container">
+            <div class="row">
+                <h1 class="projects__titile">Here are some of my <span class="orange">Projects</span> </h1>
+                <ul class="project__list">
+                    <li class="project">
+                        <div class="project__wrapper">
+                            <img src="./assets/blinker mockup.png" alt="" class="project__img">
+                            <div class="project__wrapper--bg"></div>
+                            <div class="project__description">
+                                <h3 class="project__description--title">Car sales project</h3>
+                                <h4 class="project__description--subtitle">HTML, CSS, Javascript, VUE</h4>
+                                <p class="project__description--para">Google In-Store is a platform allowing Google retail employees to report any issues with their
+                  store products. Once an issue is reported, it is posted to an API which populates a separate
+                  platform's frontend - which is used by Google's vendors to fix the issue as soon as possible. I was
+                  the sole
+                  front-end developer of this application.</p>
+                                <div class="project__description--links">
+                                    <a href="#" class="project__description--link"><i class="fa-brands fa-github"></i></a>
+                                    <a href="#" class="project__description--link"><i class="fas fa-link"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="project">
+                        <div class="project__wrapper">
+                            <img src="./assets/Frontend Simplified.jpg" alt="" class="project__img">
+                            <div class="project__wrapper--bg"></div>
+                            <div class="project__description">
+                                <h3 class="project__description--title">Car sales project</h3>
+                                <h4 class="project__description--subtitle">HTML, CSS, Javascript, VUE</h4>
+                                <p class="project__description--para">Google In-Store is a platform allowing Google retail employees to report any issues with their
+                  store products. Once an issue is reported, it is posted to an API which populates a separate
+                  platform's frontend - which is used by Google's vendors to fix the issue as soon as possible. I was
+                  the sole
+                  front-end developer of this application.</p>
+                                <div class="project__description--links">
+                                    <a href="#" class="project__description--link"><i class="fa-brands fa-github"></i></a>
+                                    <a href="#" class="project__description--link"><i class="fas fa-link"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="project">
+                        <div class="project__wrapper">
+                            <img src="./assets/google mockup.png" alt="" class="project__img">
+                            <div class="project__wrapper--bg"></div>
+                            <div class="project__description">
+                                <h3 class="project__description--title">Car sales project</h3>
+                                <h4 class="project__description--subtitle">HTML, CSS, Javascript, VUE</h4>
+                                <p class="project__description--para">Google In-Store is a platform allowing Google retail employees to report any issues with their
+                  store products. Once an issue is reported, it is posted to an API which populates a separate
+                  platform's frontend - which is used by Google's vendors to fix the issue as soon as possible. I was
+                  the sole
+                  front-end developer of this application.</p>
+                                <div class="project__description--links">
+                                    <a href="#" class="project__description--link"><i class="fa-brands fa-github"></i></a>
+                                    <a href="#" class="project__description--link"><i class="fas fa-link"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <figure class="footer__img">
+            <img src="./assets/logo.svg" alt="" >
+        </figure>
+        <div class="footer__social--list">
+            <a href="" class="footer__social--link linke__hover--effect linke__hover--effect--white">Github</a>
+            <a href="" class="footer__social--link linke__hover--effect linke__hover--effect--white">LinkedIn</a>
+            <a href="" class="footer__social--link linke__hover--effect linke__hover--effect--white">EMail</a>
+            <a href="" class="footer__social--link linke__hover--effect linke__hover--effect--white">Resume</a>
+        </div>
+        <div><p class="footer__copyright">Copyright &copy 2025 Andrew Min</p></div>
+    </footer>
+</body>
+</html>

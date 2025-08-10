@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>CSS Gradients Sample</title>
+<style>
+  body {
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; /* Space between examples */
+    padding: 20px;
+  }
+
+  div {
+    border: 1px solid #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px black;
+  }
+
+  .linear-gradient-basic {
+      background-image: linear-gradient(red, yellow);
+      height: 100px;
+      width: 200px;
+  }
+
+  .linear-gradient-direction {
+      background-image: linear-gradient(to right, #4CAF50, #8BC34A);
+      height: 100px;
+      width: 200px;
+  }
+
+  .linear-gradient-angle {
+      background-image: linear-gradient(45deg, purple, orange);
+      height: 100px;
+      width: 200px;
+  }
+
+  .linear-gradient-stops {
+      background-image: linear-gradient(to right, red, orange, yellow, green, blue);
+      height: 100px;
+      width: 300px;
+  }
+
+  .radial-gradient-basic {
+      background-image: radial-gradient(circle, white, black);
+      height: 150px;
+      width: 150px;
+      border-radius: 50%; /* Make it circular for better visual */
+  }
+
+  .radial-gradient-position {
+      background-image: radial-gradient(circle at top left, lightblue, darkblue);
+      height: 150px;
+      width: 150px;
+  }
+</style>
+</head>
+<body>
+
+  <h2>Linear Gradients</h2>
+  <div class="linear-gradient-basic">Red to Yellow</div>
+  <div class="linear-gradient-direction">Green to Lighter Green (Right)</div>
+  <div class="linear-gradient-angle">Purple to Orange (45deg)</div>
+  <div class="linear-gradient-stops">Rainbow</div>
+
+  <hr>
+
+  <h2>Radial Gradients</h2>
+  <div class="radial-gradient-basic">White to Black (Circle)</div>
+  <div class="radial-gradient-position">Blue to Dark Blue (Top-Left)</div>
+
+</body>
+</html>

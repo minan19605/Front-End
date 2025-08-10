@@ -35,3 +35,19 @@
     border: 2px solid green;
     padding: 10px 0 0 10px;
 }
+
+footer {
+    background-color: aquamarine;
+}
+
+.p_1 {
+    margin-bottom: 128px;
+}
+
+.p_2 {
+    margin: 64px 0;
+}
+
+.p_3 {
+    margin-top: 128px;
+}

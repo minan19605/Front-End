@@ -1,0 +1,74 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 1024px;
+    margin: 0 auto;
+}
+
+.p_class {
+    /* background-color: aquamarine; */
+    background: linear-gradient(to right, #4CAF50, #8BC34A);
+
+    /* width: 32px; */
+    width: 30%;
+    padding: 32px;
+    margin: 96px 0;
+    text-align: center;
+}
+
+.element-with-gradient-border-image {
+    /* padding: 10px;  */     /* Important: padding ensures content doesn't sit under the border image */
+    border: 10px solid transparent; /* Required for border-image to work, solid transparent or any color */
+    border-image: linear-gradient(to right, #a5af4c, #c3934a);
+    border-image-slice: 1; /* Slices the image for proper stretching/scaling */
+    /* height: 100px; */
+    /* width: 200px; */
+}
+
+.div_class {
+    border: 10px solid goldenrod;
+    padding: 24px;
+}
+
+body {
+  /* 仅用于将元素居中显示在页面上 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background-color: #f0f0f0;
+}
+
+.soap-shape {
+    margin-top: 64px;
+  /* 外部的“肥皂”形状 */
+  position: relative; 
+  width: 300px;
+  height: 150px;
+  background-color: #ffffff; /* 内部的颜色，使其看起来是空心的 */
+  border: 10px solid #e0e0e0; /* 外部的边框 */
+  border-radius: 50px; /* 使边角变圆，形成“肥皂”形状 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.soap-shape::after {
+  /* 内部的小长方形 */
+  content: '.'; /* 伪元素必须有 content 属性 */
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* 完美居中 */
+  
+  width: 50px;
+  height: 20px;
+  background-color: #ff9900; /* 长方形的颜色 */
+  border-radius: 5px; /* 可选：给小长方形也加一点圆角 */
+}
