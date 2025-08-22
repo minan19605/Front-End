@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="movie.css">
+    <script src="https://kit.fontawesome.com/33a51ac434.js" crossorigin="anonymous"></script>
+    <script src="movie.js"></script>
+    <title>Movies</title>
+</head>
+<body>
+    <header class="header">
+        <div class="header-row row">
+            <figure class="header-icon">
+                <img src="./reshot-icon-professional-movie-camera-BQAH5YNG6V.svg" alt="">
+            </figure>
+             <div class="header-home">
+                <a href="#" class="home-nav">Home</a>
+            </div>
+        </div>
+        
+        <div class="search-bar-container">
+            <input type="text" id="search-input" name="searchQuery" placeholder="Search by Movie Title" class="search-bar-input">
+            <div class="search-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+        </div>
+        <div class="slider-container">
+            <input type="range" min="1930" max="2025" value="1980" class="slider" id="myRange">
+            <span id="sliderValue">1980</span>
+        </div>
+    </header>
+    <div class="main">
+        <div class="container">
+            <div class="row">
+                <h1 class="title">My Favorite Movies</h1>
+                <div id="error-message-container" style="color: red;"></div>
+                <div class="movie-list">
+                    <!-- <div class="movie">
+                        <figure class="img__wrapper">
+                            <img src="https://m.media-amazon.com/images/M/MV5BNWE5MGI3MDctMmU5Ni00YzI2LWEzMTQtZGIyZDA5MzQzNDBhXkEyXkFqcGc@._V1_SX300.jpg" alt="" class="movie__img">
+                            <p class="movie__rating">6.8</p>
+                            <div class="overlay">
+                                <button class="play-btn"><i class="fa-regular fa-circle-play"></i></button>
+                                <div class="overlay__row">
+                                    <div class="overlay__content">
+                                        <p class="movie__rating--overlay">6.8</p>
+                                        <p class="movie__name--overlay">The Lord of the Rings: The Return of the King</p>
+                                        <div class="movie__type--wrapper">
+                                            <p class="movie__PG">PG-13</p>
+                                            <p class="movie__type">Action, Adventure, Comedy</p>
+                                        </div>
+                                        <p class="movie__year"><span class="white__light">Year:</span> 2010</p>
+                                        <p class="movie__actors"><span class="white__light">Actors:</span> Chris Pitt, Matt Damon</p>
+                                        <p class="movie__plot">The Guardians struggle to keep together as a team while dealing with their personal family issues, notably Star-Lord's encounter with his father, the ambitious celestial being Ego.</p>
+                                    </div>
+                                </div>
+                                <button id="open_modal" class="movie__details">Details</button>
+                            </div>
+                        </figure>
+                        <div class="movie__info">
+                            <p class="movie__name">The Lord of the Rings: The Return of the King</p>
+                            <p class="movie__year">2010</p>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="spin-loading">
+        <i class="fa-solid fa-spinner"></i>
+    </div>
+    <div id="modal-container">
+        <!-- <button class="close-btn"  >
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <div class="modal">
+            <div class="modal-combo">
+                <img src="https://m.media-amazon.com/images/M/MV5BNWE5MGI3MDctMmU5Ni00YzI2LWEzMTQtZGIyZDA5MzQzNDBhXkEyXkFqcGc@._V1_SX300.jpg" alt="" class="modal-img">
+                <div class="modal-info">
+                    <p class="modal__title">Iron Man 2</p>
+                    <div class="modal_type_rating">
+                        <p class="movie__PG">PG-13</p>
+                        <p class="movie__type">Action, Adventure, Comedy</p>
+                        <p class="movie__type movie__rating--modal">6.8</p>
+                    </div>
+                    <p class="modal-info__para">Released: 05 May 2017</p>
+                    <p class="modal-info__para">Runtime: 136 min</p>
+                    <p class="modal-info__para">Director: James Gunn</p>
+                    <p class="modal-info__para">Actors: Chris Pitt, Matt Damon</p>
+                    <div class="modal_btns">
+                        <button class="modal_btn modal-play"><i class="fa-regular fa-circle-play"></i><span class="modal-btn-name"> Play</span></button>
+                        <button class="modal_btn modal-save"><i class="fa-regular fa-bookmark"></i><span class="modal-btn-name"> Save</span></button>
+                    </div>
+                </div>
+            </div>
+            <p class="modal__plot">The Guardians struggle to keep together as a team while dealing with their personal family issues, notably Star-Lord's encounter with his father, the ambitious celestial being Ego.</p>
+        </div> -->
+    </div>
+    <footer>
+        <figure class="footer__img">
+            <img src="./my-logo.png" alt="" >
+        </figure>
+        <div class="footer__social--list">
+            <a href="" class="footer__social--link linke__hover--effect linke__hover--effect--white">Github</a>
+            <a href="" class="footer__social--link linke__hover--effect linke__hover--effect--white">LinkedIn</a>
+            <a href="" class="footer__social--link linke__hover--effect linke__hover--effect--white">EMail</a>
+            <a href="" class="footer__social--link linke__hover--effect linke__hover--effect--white">Resume</a>
+        </div>
+        <div><p class="footer__copyright">Copyright &copy 2025 Andrew Min</p></div>
+    </footer>
+</body>
+</html>

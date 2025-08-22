@@ -125,7 +125,7 @@ async function getUserTodo()
 async function getUser(){
     const users = await getUserTodo();
 
-    for(let user in users){
+    for(let user of users){
         console.log(user.title)
     }
     

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./movie.js"></script>
+    <title>Load Data and save to Local</title>
+</head>
+<body>
+    <div id="error-message-container" style="color: red;"></div>
+    <script>
+        function saveToFile(data, filename = "movie.json") {
+            const blob = new Blob([JSON.stringify(data,null,2)], {type: "application/json"});
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement("a");
+            a.href = url;
+            a.download = filename;
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            const errInfo = document.getElementById('error-message-container');
+
+            const movieTitles = await getMovieTitle();
+            if (movieTitles.length === 0) {
+                errInfo.textContent = 'Load local initial file failed.'
+                return;
+            }
+
+            const allMovieData = await fetchMovieData(movieTitles);
+            if (allMovieData.length === 0) {
+                errInfo.textContent = 'Fetch movies data failed.'
+                return;
+            }
+
+            console.log(allMovieData);
+            saveToFile(allMovieData);
+        });
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="myInput">Type something:</label>
+    <input type="number" id="myInput">
+    <p id="inputOutput"></p>
+    <p id="changeOutput"></p>
+
+    <div id="myDiv_1"></div>
+    <div id="myDiv_2"></div>
+
+    <script>
+        const myInput = document.getElementById('myInput');
+        const inputOutput = document.getElementById('inputOutput');
+        const changeOutput = document.getElementById('changeOutput');
+
+        // Fires on every keystroke, paste, etc.
+        myInput.addEventListener('input', (event) => {
+            inputOutput.textContent = `Input Event Fired: ${event.target.value}`;
+        });
+
+        // Fires only when the input loses focus
+        myInput.addEventListener('change', (event) => {
+            changeOutput.textContent = `Change Event Fired: ${event.target.value}`;
+        });
+
+        const myDiv = document.getElementById('myDiv');
+
+        // Using innerHTML
+        myDiv_1.innerHTML = "<strong>Input Event Fired: </strong>"; 
+        // Output on page: "Input Event Fired:" in bold text. The browser renders the <strong> tag.
+
+        // Using textContent
+        myDiv_2.textContent = "<strong>Input Event Fired: </strong>"; 
+        // Output on page: "<strong>Input Event Fired: </strong>" as plain text. The browser displays the <strong> tags as literal text.
+    </script>
+
+</body>
+</html>

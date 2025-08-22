@@ -1,0 +1,7 @@
+Here is your keys, both can work, max to 1000 messages per day:
+47a33bd7, 
+618e2116
+
+Please append it to all of your API requests,
+
+OMDb API: http://www.omdbapi.com/?i=tt3896198&apikey=47a33bd7
