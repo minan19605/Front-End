@@ -1,5 +1,5 @@
 import React, {useEffect, useState, useRef} from 'react'
-import './CurtainIntro.css'
+import './curtainIntro.css'
 
 export default function CurtainIntro( { duration = 1800, oncePerSession = false, onDone }) {
     const shouldShow = !oncePerSession || !sessionStorage.getItem("curtain_shown");
