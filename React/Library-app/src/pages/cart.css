@@ -1,0 +1,133 @@
+.cart__row {
+    /* display: flex;
+    flex-direction: column; */
+    /* align-items: flex-start; */
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.cart__title {
+    text-align: left;
+}
+
+.cart__column--row {
+    border: none;
+    background-color: blueviolet;
+    color: white;
+    font-weight: 600;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 24px;
+    width: 100%;
+    margin-bottom: 48px;
+}
+
+.cart__item--row{
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-between; */
+    width: 100%;
+
+    padding: 8px 16px;
+}
+
+.cart__item--book {
+    display: flex;
+}
+
+.cart__book-img--wrapper{
+    max-width: 160px;
+    width: 100%;
+}
+
+.cart__book--info {
+    margin-left: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.cart__book--price {
+    font-weight: bold;
+}
+
+.cart__remove--item {
+    background-color: none;
+    background: transparent;
+    color: red;
+    font-size: 12px;
+    font-weight: bold;
+    border: none;
+    padding: 0;
+    margin: 0;
+    text-align: start;
+}
+
+.cart__item--number {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.item__number{
+    margin-left: 300px;
+    width: 50px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 4px 0;
+}
+
+.cart__item--price {
+    margin-left: 550px;
+    font-weight: 600;
+}
+
+.cart__item--total {
+    max-width: 200px;
+    margin-left: auto;
+    margin-top: 24px;
+
+    border-top: 2px solid #242424;
+}
+
+.cart__item--sub-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+.cart__item--sub-wrapper {
+    font-weight: 500;
+    padding: 12px 0;
+}
+
+.total {
+    font-weight: 700;
+}
+
+.cart__checkout {
+    padding: 4px 12px;
+    width: 100%;
+    margin-top: 12px;
+    background-color: blueviolet;
+    border: none;
+    color: white;
+    font-weight: 500;
+}
+
+.cart__empty {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.cart__empty--img {
+    max-width: 400px;
+    margin-bottom: 24px;
+}

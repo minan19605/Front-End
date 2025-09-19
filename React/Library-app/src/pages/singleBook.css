@@ -1,0 +1,59 @@
+.book__row {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.back__link {
+    font-size: 24px;
+    font-weight: 700;
+    color: black;
+}
+
+.book__wrapper {
+    max-width: 1000px;
+    max-height: 400px;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 48px;
+}
+
+.img__wrapper{
+    width: 30%;
+}
+
+.book__img {
+    padding-right: 36px;
+}
+
+.book__description {
+    width: 60%;
+}
+
+.book__description--title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.book__summary {
+    margin-top: 24px;
+}
+
+.book__para {
+    line-height: 1.5;
+    margin: 12px 0;
+}
+
+.book__add-cart {
+    font-size: 12px;
+    color: white;
+    background-color: #7342D6;
+    padding: 6px 16px;
+    border-radius: 4px;
+    border: none;
+}
+
+.book__recommend {
+    margin-left: 48px;
+}
