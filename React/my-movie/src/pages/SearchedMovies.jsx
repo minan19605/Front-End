@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
-import { apiKey } from './MovieDetails';
+import { apiKey } from './share.jsx';
 
 import { useParams } from 'react-router-dom';
 import { Movie, MovieSkeleton} from './Recommended.jsx'
