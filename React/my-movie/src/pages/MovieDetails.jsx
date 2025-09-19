@@ -6,12 +6,13 @@ import axios from 'axios';
 
 import placeholderImage from '../assets/place_holder_202_300.png';
 
-export const apiKey = '47a33bd7';
+// export const apiKey = import.meta.env.VITE_OMDB_API_KEY;
+import { apiKey } from './share.jsx';
 
-import { useCart } from './playListContext.jsx';
+import { useCart } from './share.jsx';
 import Modal from './Modal.jsx';
 
-import { useAuth } from './AuthContext.jsx';
+import { useAuth } from './share.jsx';
 
 export default function MovieDetails() {
     const {omdbId} = useParams()

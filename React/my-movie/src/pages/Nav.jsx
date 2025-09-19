@@ -6,9 +6,9 @@ import navImg from '../assets/reshot-icon-professional-movie-camera.svg'
 
 import { useNavigate, Link } from 'react-router-dom';
 
-import { useCart } from './playListContext'
+import { useCart } from './share.jsx'
 
-import { useAuth } from './AuthContext.jsx'
+import { useAuth } from './share.jsx'
 
 
 

@@ -1,9 +1,9 @@
-import React, { createContext, useState, useContext, useEffect} from 'react'
+import React, { useState, useEffect} from 'react'
 import { db } from '../firebase/init'
 import { doc,getDoc, setDoc, updateDoc, arrayUnion, arrayRemove } from 'firebase/firestore'
-import { useAuth } from './AuthContext.jsx'
+import { useAuth } from './share.jsx'
 
-const playListContext = createContext()
+import { playListContext} from './share.jsx'
 
 export const PlayListProvider = ( {children}) => {
     const [listItems, setListItems] = useState([])
@@ -130,6 +130,3 @@ export const PlayListProvider = ( {children}) => {
     )
 }
 
-export const useCart = () => {
-    return useContext(playListContext)
-}
