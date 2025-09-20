@@ -53,7 +53,7 @@ export default function MovieDetails() {
         if (omdbId) {
             getMovieById(omdbId)
         }
-    }, [omdbId, listItems])
+    }, [omdbId])
 
     if(loading) {
         console.log('Loading details...........')
@@ -101,9 +101,9 @@ export default function MovieDetails() {
                             <span className="modal-btn-name"> Saved</span>
                             </button>)
                         :
-                    (<button className="modal_btn modal-save" onClick={() => SaveToPlayList(movie)}><FontAwesomeIcon icon={faBookmark } />
+                    (<button type="button" className="modal_btn modal-save" onClick={() => SaveToPlayList(movie)}><FontAwesomeIcon icon={faBookmark } />
                         <span className="modal-btn-name"> Save</span>
-                        </button>)
+                    </button>)
                     }
                 </div>
             </div>
