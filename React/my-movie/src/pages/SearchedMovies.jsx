@@ -25,7 +25,7 @@ async function fetchMoviebyTitle(text, page) {
 
 async function fetchMoviesDetails(idList) {
 
-    const promises = idList.map( id => axios.get(`http://www.omdbapi.com/?i=${id}&apikey=${apiKey}`) )
+    const promises = idList.map( id => axios.get(`https://www.omdbapi.com/?i=${id}&apikey=${apiKey}`) )
     const responses = await Promise.all(promises)
 
     const moviesDetails = responses.map(response => response.data)
