@@ -795,6 +795,27 @@ body {
     min-height: 100vh;
 }
 
+.title__wrapper {
+    padding: 48px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#filter__movies {
+  /* Basic appearance */
+  font-family: Arial, sans-serif;
+  font-size: 1rem;
+  padding: 10px 30px 10px 15px; /* Add extra padding for the custom arrow */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  color: #333;
+  width: 200px;
+
+}
+
 footer {
   /* position: fixed;
   bottom: 0;

@@ -42,7 +42,22 @@ export default function SearchedMovies() {
     const [errMsg, setErrorMsg] = useState('')
     const [moviesDetails, setDetails] = useState([])
 
+    const [filterValue, setFilterVAlue] = useState('')
     
+    useEffect(() => {
+        let sortedMovieList = [...moviesDetails]
+        if (filterValue === "Year old to new") {
+            sortedMovieList.sort((a,b) => Number(a.Year) - Number(b.Year))
+        }else if (filterValue === "Year new to old") {
+            sortedMovieList.sort((a,b) => Number(b.Year) - Number(a.Year) )
+        }else if (filterValue === "Rating high to low") {
+            sortedMovieList.sort((a,b) => Number(b.imdbRating) - Number(a.imdbRating))
+        }else if (filterValue === "Rating low to high") {
+            sortedMovieList.sort((a,b) => Number(a.imdbRating) - Number(b.imdbRating))
+        }
+        setDetails(sortedMovieList)
+        console.log(sortedMovieList)
+    }, [filterValue])
 
     useEffect( () => {
         const getMoviesDetails = async () => {
@@ -83,6 +98,7 @@ export default function SearchedMovies() {
             setLoading(true)
             setErrorMsg('')
             getMoviesDetails()
+            setFilterVAlue('')
         }
     }, [title, year])
 
@@ -120,7 +136,17 @@ export default function SearchedMovies() {
                 <div className="main">
                 <div className="container">
                     <div className="row">
-                        <h1 className="title">Searched Movies</h1>
+                        <div className="title__wrapper">
+                            <h1 className="title">Searched Movies</h1>
+                            <select name="filter" id="filter__movies" value={filterValue}
+                            onChange={(event) => setFilterVAlue(event.target.value)}>
+                                <option value="" disabled >Sort</option>
+                                <option value="Year old to new">Year old to new</option>
+                                <option value="Year new to old">Year new to old</option>
+                                <option value="Rating high to low">Rating high to low</option>
+                                <option value="Rating low to high">Rating low to high</option>
+                            </select>
+                        </div>
                         <div className="movie-list">
                             {
                             moviesDetails.map((movie) => {
@@ -133,5 +159,4 @@ export default function SearchedMovies() {
             </div>
           )
     }
-
 }
