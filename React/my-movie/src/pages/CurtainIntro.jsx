@@ -1,4 +1,4 @@
-import React, {useEffect, useState, useRef} from 'react'
+import React, {useLayoutEffect, useState, useRef} from 'react'
 import './curtainIntro.css'
 
 export default function CurtainIntro( { duration = 1800, oncePerSession = false, onDone }) {
@@ -6,18 +6,25 @@ export default function CurtainIntro( { duration = 1800, oncePerSession = false,
     const [show, setShow] = useState(shouldShow);
     const wrapperRef = useRef(null);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (!show) {
-        onDone?.()
+        // onDone?.()
         return
     };
+
+     // Mark body as "curtain-active" so we can hide footer / lock scroll
+    document.body.classList.add('curtain-active');
 
     const t = setTimeout(() => {
         // sessionStorage.setItem("curtain_shown", "1"); //control if show when refresh the page
       setShow(false);
+      document.body.classList.remove('curtain-active');
       onDone?.()
-    }, duration + 400); // 留一点余量等淡出
-    return () => clearTimeout(t);
+    }, duration + 400); // add 400ms for fade out
+    return () => {
+      clearTimeout(t);
+      document.body.classList.remove('curtain-active');
+    }
   }, [show, duration, onDone]);
 
   if (!show) return null;

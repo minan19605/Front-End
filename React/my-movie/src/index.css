@@ -74,6 +74,41 @@ body {
     transform: scaleX(1);
 }
 
+.homeBody {
+    height: 80vh;
+}
+
+.home__title{
+    color: #e3e3e3;
+    text-align: center;
+    font-size: 28px;
+    margin: 48px 0;
+}
+
+.recommend__wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 48px;
+}
+
+.recommend {
+    color: #e3e3e3;
+    margin-right: 24px;
+}
+
+.btn_recommend{
+    padding: 6px 12px;
+    font-size: 18px;
+    font-weight: 500;
+    color: #2b2c3a;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.btn_recommend:hover {
+    background-color: #00c0ff;
+}
+
 .nav__rightpart {
     display: flex;
     align-items: center;
@@ -219,6 +254,10 @@ body {
     font-size: 18px;
     font-weight: 600;
     color: #242424;
+}
+
+.homeBody #sliderValue {
+    color: white;
 }
 
 .title{
@@ -519,8 +558,9 @@ body {
     bottom: 4px;
     padding: 4px 8px;
     font-size: 12px;
-    background: transparent;
-    color: #FFFFFF66;
+    /* background: transparent; */
+    background-color: #ce1a92;
+    color: #ffffff;
     border: 1px solid #FFFFFF66;
     cursor: pointer;
 }
@@ -814,6 +854,16 @@ body {
   color: #333;
   width: 200px;
 
+}
+
+/* While curtain is active, hide footer and lock scroll */
+body.curtain-active {
+  overflow: hidden;      /* optional: prevent scroll during intro */
+}
+
+body.curtain-active footer {
+  visibility: hidden;    /* footer won¡¯t flash through the opening */
+  pointer-events: none;
 }
 
 footer {

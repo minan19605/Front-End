@@ -4,7 +4,7 @@ import myLogo from '../assets/my-logo.png'
 export default function Footer() {
   return (
     <>
-        <footer>
+      <footer>
         <figure className="footer__img">
             <img src={myLogo} alt="" />
         </figure>

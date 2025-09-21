@@ -16,6 +16,7 @@ import {PlayListProvider} from './pages/playListContext.jsx'
 import { AuthProvider } from './pages/AuthContext.jsx'
 import SignupForm from './pages/SignupForm.jsx'
 import LoginForm from './pages/LoginForm.jsx'
+import Recommended from './pages/Recommended.jsx'
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -35,6 +36,7 @@ function App() {
         <ScrollToTop />
         <Routes>
           <Route path='/' element= {<Home />}></Route>
+          <Route path='/recommend' element = {<Recommended />}></Route>
           <Route path='/moviedetails/:omdbId' element= {<MovieDetails />}></Route>
           <Route path='/movielist/:title/:year' element={ <SearchedMovies />}></Route>
           <Route path='/playlist' element = {<PlayList/>}></Route>

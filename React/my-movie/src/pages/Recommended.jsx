@@ -6,7 +6,7 @@ import {Link} from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faCirclePlay} from '@fortawesome/free-regular-svg-icons'
 import placeholderImage from '../assets/place_holder_202_300.png';
-import CurtainIntro from './CurtainIntro.jsx';
+
 
 export function MovieSkeleton () {
     return (
@@ -60,31 +60,23 @@ export function Movie({movie, children }) {
 }
 
 export default function Recommended() {
-    const initiallyRevealed = !!sessionStorage.getItem("curtain_shown");
-    const [ready, setReady] = React.useState(initiallyRevealed);
 
   return (
     <div>
         <div className="main">
         <div className="container">
             <div className="row">
-                {!ready && (
-                    <CurtainIntro duration={1800} oncePerSession onDone={() =>setReady(true)} />
-                )}
-                {ready && 
-                    (<main>
+                <main>
                     <h1 className="title">Recommended Movies</h1>
                     <div id="error-message-container" style={{color: 'red'}}>
-
                     </div>
                     <div className="movie-list">
-                        {
+                    {
                         initMovies.map((movie) => {
                             return <Movie movie={movie} key={movie.imdbID} />
-                        })}
+                    })}
                     </div>
-                    </main>)
-                }
+                </main>
             </div>
         </div>
     </div>
