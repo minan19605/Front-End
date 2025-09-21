@@ -5,6 +5,20 @@
     <link rel="icon" type="image/png" href="./src/assets/my-logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Movies</title>
+
+    <script>
+    (function () {
+      try {
+        var onHome = location.pathname === "/" || location.pathname === "/index.html";
+        //var shouldShowCurtain = !sessionStorage.getItem("curtain_shown");
+        // if (onHome && shouldShowCurtain) 
+        if (onHome) {
+          // Add a class on <html> immediately, before React/CSS finish loading
+          document.documentElement.classList.add("curtain-boot");
+        }
+      } catch (e) { /* ignore */ }
+    })();
+  </script>
   </head>
   <body>
     <div id="root"></div>

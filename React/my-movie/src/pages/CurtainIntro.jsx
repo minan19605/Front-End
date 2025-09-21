@@ -13,6 +13,7 @@ export default function CurtainIntro( { duration = 1800, oncePerSession = false,
     };
 
      // Mark body as "curtain-active" so we can hide footer / lock scroll
+    document.documentElement.classList.remove("curtain-boot");
     document.body.classList.add('curtain-active');
 
     const t = setTimeout(() => {
@@ -24,6 +25,7 @@ export default function CurtainIntro( { duration = 1800, oncePerSession = false,
     return () => {
       clearTimeout(t);
       document.body.classList.remove('curtain-active');
+      document.documentElement.classList.remove("curtain-boot");
     }
   }, [show, duration, onDone]);
 

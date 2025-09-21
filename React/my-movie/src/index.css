@@ -856,13 +856,24 @@ body {
 
 }
 
+/* Before React mounts (very first paint on hard refresh), if we're on Home
+   and the intro should play, the <html> has .curtain-boot. Hide footer + lock scroll. */
+html.curtain-boot body {
+  overflow: hidden;
+}
+
+html.curtain-boot footer {
+  visibility: hidden;
+  pointer-events: none;
+}
+
 /* While curtain is active, hide footer and lock scroll */
 body.curtain-active {
   overflow: hidden;      /* optional: prevent scroll during intro */
 }
 
 body.curtain-active footer {
-  visibility: hidden;    /* footer won¡¯t flash through the opening */
+  visibility: hidden;    /* footer won’t flash through the opening */
   pointer-events: none;
 }
 
