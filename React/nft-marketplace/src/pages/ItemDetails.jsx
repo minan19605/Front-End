@@ -80,30 +80,28 @@ function OneItemDetail({nft}) {
           <div className="item_info_counts">
             <div className="item_info_views">
               <i className="fa fa-eye"></i>
-              100
+              {nft.views}
             </div>
             <div className="item_info_like">
               <i className="fa fa-heart"></i>
-              74
+              {nft.likes}
             </div>
           </div>
           <p>
-            doloremque laudantium, totam rem aperiam, eaque ipsa quae ab
-            illo inventore veritatis et quasi architecto beatae vitae
-            dicta sunt explicabo.
+            {nft.description}
           </p>
           <div className="d-flex flex-row">
             <div className="mr40">
               <h6>Owner</h6>
               <div className="item_author">
                 <div className="author_list_pp">
-                  <Link to="/author">
-                    <img className="lazy" src={nft.authorImage} alt="" />
+                  <Link to={`/author/${nft.ownerId}`}>
+                    <img className="lazy" src={nft.ownerImage} alt="" />
                     <i className="fa fa-check"></i>
                   </Link>
                 </div>
                 <div className="author_list_info">
-                  <Link to="/author">Monica Lucas</Link>
+                  <Link to={`/author/${nft.ownerId}`}>{nft.ownerName}</Link>
                 </div>
               </div>
             </div>
@@ -114,13 +112,13 @@ function OneItemDetail({nft}) {
               <h6>Creator</h6>
               <div className="item_author">
                 <div className="author_list_pp">
-                  <Link to="/author">
-                    <img className="lazy" src={nft.authorImage} alt="" />
+                  <Link to={`/author/${nft.creatorId}`}>
+                    <img className="lazy" src={nft.creatorImage} alt="" />
                     <i className="fa fa-check"></i>
                   </Link>
                 </div>
                 <div className="author_list_info">
-                  <Link to="/author">Monica Lucas</Link>
+                  <Link to={`/author/${nft.creatorId}`}>{nft.creatorName}</Link>
                 </div>
               </div>
             </div>
@@ -128,7 +126,7 @@ function OneItemDetail({nft}) {
             <h6>Price</h6>
             <div className="nft-item-price">
               <img src={EthImage} alt="" />
-              <span>1.85</span>
+              <span>{nft.price}</span>
             </div>
           </div>
         </div>
@@ -143,17 +141,21 @@ const ItemDetails = () => {
   }, []);
 
   const {nftId} =  useParams()
-  const [collections, setCollections] = useState([])
+  const [oneItem, setOneItem] = useState()
   const [error, setError] = useState(null)
+
+  
   
   useEffect(() => {
-    fetchHotCollections()
-    .then(setCollections)
+    const url = `https://us-central1-nft-cloud-functions.cloudfunctions.net/itemDetails?nftId=${nftId}`
+
+    fetchHotCollections(url)
+    .then(setOneItem)
     .catch(e => setError(e))
   }, [nftId])
 
-  const item = collections?.find(nft => nft.nftId === Number(nftId))
-  console.log("item is : ", item)
+  // const item = collections?.find(nft => nft.nftId === Number(nftId))
+  console.log("item length is : ", oneItem)
 
   return (
     <div id="wrapper">
@@ -164,7 +166,7 @@ const ItemDetails = () => {
           <div className="container">
             <div className="row">
               {
-                item? <OneItemDetail nft={item} /> : <OneItemSkelton />
+                oneItem ? <OneItemDetail nft={oneItem} /> : <OneItemSkelton />
               }
             </div>
           </div>
