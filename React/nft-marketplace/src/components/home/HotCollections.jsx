@@ -50,7 +50,7 @@ function oneNFT(nft) {
           </Link>
         </div>
         <div className="nft_coll_pp">
-          <Link to="/author">
+          <Link to={`/author/${nft.authorId}`}>
             <img className="lazy pp-coll" src={nft.authorImage} alt="" />
           </Link>
           <i className="fa fa-check"></i>
@@ -66,8 +66,8 @@ function oneNFT(nft) {
   )
 }
 
-export async function fetchHotCollections() {
-    const response = await fetch('https://us-central1-nft-cloud-functions.cloudfunctions.net/hotCollections')
+export async function fetchHotCollections(url) {
+    const response = await fetch(url)
     if( !response.ok) {
           throw new Error(`HTTP Error! Status: ${response.status}`);
     }
@@ -81,7 +81,8 @@ const HotCollections = () => {
 
     useEffect(() => {
       setCollections([])
-      fetchHotCollections()
+      const url = 'https://us-central1-nft-cloud-functions.cloudfunctions.net/hotCollections'
+      fetchHotCollections(url)
       .then(setCollections)
       .catch(e => setError(e))
     }, [])
