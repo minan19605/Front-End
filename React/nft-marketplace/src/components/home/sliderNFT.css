@@ -28,6 +28,12 @@ The default slick-slide class might have a fixed width, so we override it.
     /* margin-bottom: 8px; */
 }
 
+.newitem__img--skeleton{
+    width: min(100%,280px);
+    height: 100%;
+    background-color: rgb(204, 204, 204);
+}
+
 .nft-slider .nft_wrap {
     height: 200%;
 }
@@ -40,7 +46,7 @@ The default slick-slide class might have a fixed width, so we override it.
   position: relative;
   overflow: hidden;
   background: #e9ecef;          /* 基底 */
-  border-radius: 10px;
+  /* border-radius: 10px; */
 }
 
 .skeleton::after {
@@ -104,6 +110,18 @@ The default slick-slide class might have a fixed width, so we override it.
 .detail-nft__title--skeleton {
     width: 100px;
     height: 40px;
+    margin: 8px 0;
+}
+
+.newitem__title--skeleton {
+    width: 100px;
+    height: 20px;
+    margin: 8px 0;
+}
+
+.newitem__price--skeleton {
+    width: 30px;
+    height: 16px;
     margin: 8px 0;
 }
 
