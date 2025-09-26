@@ -159,3 +159,20 @@ The default slick-slide class might have a fixed width, so we override it.
     height: 18px;
     margin-top: -12px;
 }
+
+.top__auth--skeleton {
+    width: 42px;
+    height: 42px;
+    border-radius: 999px;
+}
+
+.top__auth-name--skeleton {
+    width: 80px;
+    height: 16px;
+}
+
+.top__price--skeleton {
+    margin-top: 12px;
+    width: 32px;
+    height: 12px;
+}
