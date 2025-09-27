@@ -66,7 +66,7 @@ function Countdown({expiryTimestamp}) {
 
 }
 
-function NewItemSkeleton() {
+export function NewItemSkeleton() {
 
   return (
   <div className="nft__item" >
@@ -89,9 +89,9 @@ function NewItemSkeleton() {
 }
 
 // new Array(4).fill(0).map((_, index) =>()
-function OneNewItem(nft) {
+export function OneNewItem(nft) {
   return (
-    <div className="nft__item" key={nft.nftId}>
+    <div className="nft__item" key={nft.id}>
       <div className="author_list_pp">
         <Link
           to={`/author/${nft.authorId}`}
@@ -149,16 +149,16 @@ function OneNewItem(nft) {
 
 const NewItems = () => {
   const [collections, setCollections] = useState([])
-    const [error, setError] = useState(null)
-  
-      useEffect(() => {
-        setCollections([])
-        const url = 'https://us-central1-nft-cloud-functions.cloudfunctions.net/newItems'
-        fetchHotCollections(url)
-        .then(setCollections)
-        .catch(e => setError(e))
-      }, [])
-      console.log("Collection at begin is: ", collections)
+  const [error, setError] = useState(null)
+
+  useEffect(() => {
+    setCollections([])
+    const url = 'https://us-central1-nft-cloud-functions.cloudfunctions.net/newItems'
+    fetchHotCollections(url)
+    .then(setCollections)
+    .catch(e => setError(e))
+  }, [])
+
 
   return (
     <section id="section-items" className="no-bottom">

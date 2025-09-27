@@ -42,7 +42,7 @@ export default function SearchedMovies() {
     const [errMsg, setErrorMsg] = useState('')
     const [moviesDetails, setDetails] = useState([])
 
-    const [filterValue, setFilterVAlue] = useState('')
+    const [filterValue, setFilterValue] = useState('')
     
     useEffect(() => {
         let sortedMovieList = [...moviesDetails]
@@ -98,7 +98,7 @@ export default function SearchedMovies() {
             setLoading(true)
             setErrorMsg('')
             getMoviesDetails()
-            setFilterVAlue('')
+            a('')
         }
     }, [title, year])
 
@@ -139,7 +139,7 @@ export default function SearchedMovies() {
                         <div className="title__wrapper">
                             <h1 className="title">Searched Movies</h1>
                             <select name="filter" id="filter__movies" value={filterValue}
-                            onChange={(event) => setFilterVAlue(event.target.value)}>
+                            onChange={(event) => a(event.target.value)}>
                                 <option value="" disabled >Sort</option>
                                 <option value="Year old to new">Year old to new</option>
                                 <option value="Year new to old">Year new to old</option>
