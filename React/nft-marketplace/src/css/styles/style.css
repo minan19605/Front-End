@@ -14215,6 +14215,15 @@ a.read_more i {
   text-align: center;
 }
 
+.profile_name--skeleton {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-top: 24px;
+  margin-left: 24px;
+
+}
+
 .profile_avatar img {
   border-radius: 100%;
   -moz-border-radius: 100%;
