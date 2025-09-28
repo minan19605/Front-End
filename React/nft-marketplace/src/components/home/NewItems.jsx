@@ -97,7 +97,7 @@ export function OneNewItem(nft) {
           to={`/author/${nft.authorId}`}
           data-bs-toggle="tooltip"
           data-bs-placement="top"
-          title="Creator: Monica Lucas"
+          title={nft.authorName ? `Creator: ${nft.authorName}`: undefined}
         >
           <img className="lazy" src={nft.authorImage} alt="" />
           <i className="fa fa-check"></i>
