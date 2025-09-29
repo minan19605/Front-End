@@ -41,6 +41,10 @@ const Author = () => {
   const {id} =  useParams()
 
   useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
+
+  useEffect(() => {
     setAuth()
     const url = `https://us-central1-nft-cloud-functions.cloudfunctions.net/authors?author=${id}`
     fetchHotCollections(url)
