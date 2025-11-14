@@ -1,7 +1,7 @@
 import React, { Suspense } from 'react'
 import Link from 'next/link';
 import styles from './ForYouSelected.module.css'
-import Image from 'next/image';
+// import Image from 'next/image';
 import { FaPlayCircle } from 'react-icons/fa'
 import { HiOutlineClock, HiOutlineStar } from 'react-icons/hi'
 import GetAudioDuration from './GetAudioDuration';
@@ -21,7 +21,7 @@ export interface Book {
     status: string;
     subscriptionRequired: boolean;
     summary: string;
-    tag: string[];
+    tags: string[];
     bookDescription: string;
     authorDescription: string;
 }

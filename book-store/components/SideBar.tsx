@@ -32,7 +32,7 @@ export default function SideBar() {
 
     const { fontSizeMode, setFontSizeMode } = useFont();
 
-    const { currentUser, isLoggedIn,isModalOpen, logout, openModal, closeModal } = useAuth()
+    const { isLoggedIn,isModalOpen, logout, openModal, closeModal } = useAuth()
     // const isLoggedIn = !! currentUser
 
     const handleClick = () => {

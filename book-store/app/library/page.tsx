@@ -21,7 +21,7 @@ export default function Page() {
             <SearchBar />
             <div className="max-w-[1100px] w-full mx-auto px-6">
                 <div className="container w-full py-10">
-                {isLoggedIn ? 
+                {isLoggedIn && currentUser ? 
                     (< GetBooks userId={currentUser.uid} />)
                     :
                     (<div className={styles.settingLogin__Wrapper}>

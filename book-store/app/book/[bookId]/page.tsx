@@ -1,13 +1,13 @@
 
 import React, { Suspense } from 'react'
-import Link from 'next/link'
+// import Link from 'next/link'
 import SearchBar from '@/components/SearchBar'
 import styles from './page.module.css'
 
-import { Book, getBooks } from '@/components/ForYouSelected'
+import { Book } from '@/components/ForYouSelected'
 import ConditionalReadListenButton from './ConditionalReadListenButton'
 
-import { HiOutlineClock, HiOutlineStar, HiOutlineMicrophone, HiOutlineLightBulb, HiOutlineBookOpen, HiOutlineBookmark } from 'react-icons/hi'
+import { HiOutlineClock, HiOutlineStar, HiOutlineMicrophone, HiOutlineLightBulb, HiOutlineBookOpen } from 'react-icons/hi'
 import AddToLibrary from './AddToLibrary'
 
 import { ShimmerWrapper, Skeleton } from '@/components/ShimmerSkeleton';
@@ -70,12 +70,27 @@ const BookInfoSkeleton:React.FC = () => {
     );
 };
 
+const getOneBook = async ( url: string) : Promise<Book> => {
+
+    const response = await fetch(url)
+    if( !response.ok) {
+          throw new Error(`HTTP Error! Status: ${response.status}`);
+    }
+
+    const data = await response.json()
+    // console.log("In getBooks",data)
+
+    // console.log("Start fetch book....")
+    // await new Promise(resolve => setTimeout(resolve, 2000));
+    // console.log("end fetch book !!!")
+    return data
+}
 
 export default async function page({params}: {params: Promise<{bookId: string}>}) {
   const {bookId} = await params;
   const bookUrl = `https://us-central1-summaristt.cloudfunctions.net/getBook?id=${bookId}`
 
-  const bookData = await getBooks(bookUrl)
+  const bookData:Book = await getOneBook(bookUrl)
   // console.log(bookData.title)
 
   return (
