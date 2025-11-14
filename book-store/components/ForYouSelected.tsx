@@ -26,6 +26,22 @@ export interface Book {
     authorDescription: string;
 }
 
+export const getOneBook = async ( url: string) : Promise<Book> => {
+
+    const response = await fetch(url)
+    if( !response.ok) {
+          throw new Error(`HTTP Error! Status: ${response.status}`);
+    }
+
+    const data = await response.json()
+    // console.log("In getBooks",data)
+
+    // console.log("Start fetch book....")
+    // await new Promise(resolve => setTimeout(resolve, 2000));
+    // console.log("end fetch book !!!")
+    return data
+}
+
 export const getBooks = async ( url: string) : Promise<Book[]> => {
 
     const response = await fetch(url)

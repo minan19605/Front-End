@@ -4,7 +4,7 @@ import React, { Suspense } from 'react'
 import SearchBar from '@/components/SearchBar'
 import styles from './page.module.css'
 
-import { Book } from '@/components/ForYouSelected'
+import { Book, getOneBook } from '@/components/ForYouSelected'
 import ConditionalReadListenButton from './ConditionalReadListenButton'
 
 import { HiOutlineClock, HiOutlineStar, HiOutlineMicrophone, HiOutlineLightBulb, HiOutlineBookOpen } from 'react-icons/hi'
@@ -69,22 +69,6 @@ const BookInfoSkeleton:React.FC = () => {
       </div>
     );
 };
-
-const getOneBook = async ( url: string) : Promise<Book> => {
-
-    const response = await fetch(url)
-    if( !response.ok) {
-          throw new Error(`HTTP Error! Status: ${response.status}`);
-    }
-
-    const data = await response.json()
-    // console.log("In getBooks",data)
-
-    // console.log("Start fetch book....")
-    // await new Promise(resolve => setTimeout(resolve, 2000));
-    // console.log("end fetch book !!!")
-    return data
-}
 
 export default async function page({params}: {params: Promise<{bookId: string}>}) {
   const {bookId} = await params;
