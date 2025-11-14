@@ -19,7 +19,7 @@ export default function AddToLibrary({bookId}:{bookId:string}) {
     console.log(displayText)
 
     const handleClick = async () => {
-        if(!isLoggedIn) {
+        if(!isLoggedIn || !currentUser) {
             openModal()
             return
         }
@@ -56,7 +56,7 @@ export default function AddToLibrary({bookId}:{bookId:string}) {
         }
         console.log("After get book info, ifExist is: ", ifExist)
         
-    }, [bookId])
+    }, [bookId, currentUser, ifExist, isLoggedIn])
 
   return (
     <div className={styles["bookmark"]}>
