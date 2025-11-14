@@ -57,8 +57,8 @@ export const getFriendlyErrorMessage = (errorCode: string): string => {
 };
 
 export type OperationResult = 
-    |{success: boolean; user: User;}
-    |{success: boolean; error: string;}
+    |{success: true; user: User;}
+    |{success: false; error: string;}
 
 const GoogleLogin = async (): Promise<OperationResult> => {
     const provider = new GoogleAuthProvider() ;
