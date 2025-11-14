@@ -42,7 +42,9 @@ export const getBooks = async ( url: string) : Promise<Book[]> => {
     return data
 }
 
-export const BookHtml = ({book, styles}:{book:Book, styles: any}) => {
+type CSSModule = Readonly<Record<string, string>>;
+
+export const BookHtml = ({book, styles}:{book:Book, styles: CSSModule}) => {
 
     return (
         <Link href={`/book/${book.id}`} key={book.id}>

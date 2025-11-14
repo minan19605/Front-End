@@ -9,7 +9,9 @@ import GetAudioDuration from './GetAudioDuration';
 
 import { ShimmerWrapper, Skeleton } from './ShimmerSkeleton';
 
-const SearchedBook = ({book, styles}:{book:Book, styles: any}) => {
+type CSSModule = Readonly<Record<string, string>>;
+
+const SearchedBook = ({book, styles}:{book:Book, styles: CSSModule}) => {
     return (
       <Link href={`/book/${book.id}`} key={book.id}>
           <div className={styles["search__book--link"]}>

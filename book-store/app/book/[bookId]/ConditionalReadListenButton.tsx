@@ -4,7 +4,9 @@ import React from 'react'
 import Link from 'next/link'
 import { useAuth } from '@/components/AuthContext'
 
-export default function ConditionalReadListenButton({text, bookId, styles, icon}: {text:string, bookId: string, styles:any, icon:React.ReactNode}) {
+type CSSModule = Readonly<Record<string, string>>;
+
+export default function ConditionalReadListenButton({text, bookId, styles, icon}: {text:string, bookId: string, styles:CSSModule, icon:React.ReactNode}) {
     const { isLoggedIn, openModal } = useAuth()
 //   const isLoggedIn = !! currentUser
     if(isLoggedIn) {

@@ -6,6 +6,10 @@ import { TbRewindBackward10, TbRewindForward10 } from 'react-icons/tb';
 import { FiPlay, FiPause } from 'react-icons/fi';
 import styles from './AudioPlayer.module.css';
 
+import type { CSSProperties } from 'react';
+
+type SliderStyle = CSSProperties & { ['--val']?: string };
+
 type Props = {
   value: number; //0-100 slider percent
   current: string;  // "01:07"
@@ -42,7 +46,7 @@ export default function AudioPlayer({
         <span className={styles.time}>{current}</span>
         <input type="range" className={styles.slider} min={0} max={100} value={value}
           onChange={(e) => onSeek?.(Number(e.target.value))}
-          style={{ ['--val' as any]: `${value}%` }}
+          style={{ ['--val']: `${value}%` } as SliderStyle}
           aria-label='Playback position'/>
         <span className={styles.time}>{total}</span>
       </div>

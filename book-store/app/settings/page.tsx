@@ -8,7 +8,7 @@ import SearchBar from '@/components/SearchBar'
 import Image from "next/image";
 import { useAuth } from '@/components/AuthContext';
 
-export default function page() {
+export default function Page() {
     const {isLoggedIn,openModal} = useAuth()
   return (
     <div className="wrapper">

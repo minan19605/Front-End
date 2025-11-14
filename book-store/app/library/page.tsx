@@ -11,7 +11,7 @@ import { useAuth } from '@/components/AuthContext';
 import GetBooks from './GetBooks';
 
 
-export default function page() {
+export default function Page() {
     const {isLoggedIn, currentUser, openModal} = useAuth()
 
   return (
