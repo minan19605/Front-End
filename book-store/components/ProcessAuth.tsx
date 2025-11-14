@@ -60,22 +60,45 @@ export type OperationResult =
     |{success: true; user: User;}
     |{success: false; error: string;}
 
-const GoogleLogin = async (): Promise<OperationResult> => {
-    const provider = new GoogleAuthProvider() ;
+// const GoogleLogin = async (): Promise<OperationResult> => {
+//     const provider = new GoogleAuthProvider() ;
+
+//     try {
+//         const userCredential = await signInWithPopup(auth, provider);
+//         return { 
+//             success: true, // Discriminator field
+//             user: userCredential.user
+//         };
+//     } catch (e) {
+//         let errorInfo: string = 'auth/unknown-error';
+
+//         if (e instanceof FirebaseError)  errorInfo = e.code ; 
+//         else if (e instanceof Error)     errorInfo = e.message;
+
+//         return { success: false, error: errorInfo}
+//     }
+// }
+
+const GoogleLogin = async (): Promise<User> => {
+    const provider = new GoogleAuthProvider();
 
     try {
         const userCredential = await signInWithPopup(auth, provider);
-        return { 
-            success: true, // Discriminator field
-            user: userCredential.user
-        };
+        // 成功时：直接返回 User 对象
+        return userCredential.user; 
     } catch (e) {
         let errorInfo: string = 'auth/unknown-error';
 
-        if (e instanceof FirebaseError)  errorInfo = e.code ; 
-        else if (e instanceof Error)     errorInfo = e.message;
+        if (e instanceof FirebaseError) {
+            // 失败时：使用 throw 抛出 Firebase 错误码
+            errorInfo = e.code; 
+        } else if (e instanceof Error) {
+            // 失败时：抛出通用错误信息
+            errorInfo = e.message;
+        }
 
-        return { success: false, error: errorInfo}
+        // 统一抛出一个新的 Error 对象，以便调用方可以在 catch 块中捕获
+        throw new Error(errorInfo);
     }
 }
 

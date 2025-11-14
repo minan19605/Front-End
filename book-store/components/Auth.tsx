@@ -7,6 +7,7 @@ import { FaUser } from 'react-icons/fa';
 import Image from "next/image";
 import {handleSignup, handleEmailPwdLogin, GoogleLogin, guestLogin, getFriendlyErrorMessage} from './ProcessAuth'
 import type {OperationResult} from './ProcessAuth'
+import { type User } from 'firebase/auth'
 
 interface AuthProps {
   onClose: () => void;
@@ -25,17 +26,40 @@ const Auth: React.FC<AuthProps> = ({onClose}) => {
     setPwd('')
   }
 
-  const handleGoogleLogin = async () => {
-    const result: OperationResult = await GoogleLogin();
+  // const handleGoogleLogin = async () => {
+  //   const result: OperationResult = await GoogleLogin();
 
-    if(result.success) {
-      setError('')
-      onClose()
-      console.log("Authentication successful! User UID", result.user.uid)
-    } else {
-      const friendlyMessage = getFriendlyErrorMessage(result.error);
-      setError(friendlyMessage)
-      console.log("Authentication failure! error: ", result.error)
+  //   if(result.success) {
+  //     setError('')
+  //     onClose()
+  //     console.log("Authentication successful! User UID", result.user.uid)
+  //   } else {
+  //     const friendlyMessage = getFriendlyErrorMessage(result.error);
+  //     setError(friendlyMessage)
+  //     console.log("Authentication failure! error: ", result.error)
+  //   }
+  // }
+
+  const handleGoogleLogin = async () => {
+    try {
+        // 1. await 成功：直接获取到 User 对象
+        const user: User = await GoogleLogin();
+        
+        // 成功处理逻辑
+        setError('');
+        onClose();
+        console.log("Authentication successful! User UID", user.uid); 
+        
+    } catch (error) {
+        // 2. catch 失败：捕获到 GoogleLogin 中抛出的 Error 对象
+        
+        // 提取错误信息
+        const errorMessage = error instanceof Error ? error.message : 'An unexpected error occurred';
+        
+        // 失败处理逻辑
+        const friendlyMessage = getFriendlyErrorMessage(errorMessage); // 假设这个函数依然存在
+        setError(friendlyMessage);
+        console.log("Authentication failure! error: ", errorMessage);
     }
   }
 
