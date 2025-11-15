@@ -48,7 +48,7 @@ const Auth: React.FC<AuthProps> = ({onClose}) => {
         // 成功处理逻辑
         setError('');
         onClose();
-        console.log("Authentication successful! User UID", user.uid); 
+        // console.log("Authentication successful! User UID", user.uid); 
         
     } catch (error) {
         // 2. catch 失败：捕获到 GoogleLogin 中抛出的 Error 对象
