@@ -371,11 +371,11 @@ section:nth-child(even) {
 }
 
 .project {
-    margin-bottom: 135px;
+    margin-bottom: 80px;
 }
 
 .project:last-child {
-    margin-bottom: 45px;
+    margin-bottom: 48px;
 }
 
 .project:hover .project__wrapper::before  {
@@ -530,6 +530,14 @@ li {
 @media (max-width: 480px) {
     .nav-link:not(:last-child) {
         display: none;
+    }
+
+    .project {
+        margin-bottom: 48px;
+    }
+
+    .project:last-child {
+        margin-bottom: 8px;
     }
 
     .project__description {
